@@ -1,0 +1,71 @@
+{
+  "success": {
+    "createSuccess": {
+      "code": "ESS001",
+      "message": "employeeskill created successfully.",
+      "ariaLabel": "Notification: employeeskill created successfully"
+    },
+    "updateSuccess": {
+      "code": "ESS002",
+      "message": "employeeskill updated successfully.",
+      "ariaLabel": "Notification: employeeskill updated successfully"
+    },
+    "listSuccess": {
+      "code": "ESS003",
+      "message": "employeeskill list retrieved successfully.",
+      "ariaLabel": "Notification: employeeskill list retrieved successfully"
+    },
+    "viewSuccess": {
+      "code": "ESS004",
+      "message": "employeeskill details fetched successfully.",
+      "ariaLabel": "Notification: employeeskill details fetched successfully"
+    },
+    "deleteSuccess": {
+      "code": "ESS005",
+      "message": "employeeskill deleted successfully.",
+      "ariaLabel": "Notification: employeeskill deleted successfully"
+    },
+    "oktaUsersSuccess": {
+      "code": "ESS006",
+      "message": "okta users retrieve successfully.",
+      "ariaLabel": "Notification: okta users retrieve successfully"
+    }
+  },
+  "error": {
+    "recordNotFound": {
+      "code": "ESE404",
+      "message": "employeeskill not found.",
+      "ariaLabel": "Error: employeeskill not found"
+    },
+    "createFailed": {
+      "code": "ESE403",
+      "message": "employeeskill not created.",
+      "ariaLabel": "Notification: employeeskill not created"
+    },
+    "updateFailed": {
+      "code": "ESE402",
+      "message": "employeeskill update failed.",
+      "ariaLabel": "Notification: employeeskill update failed"
+    },
+    "listFailed": {
+      "code": "ESE405",
+      "message": "employeeskill list retrieval failed.",
+      "ariaLabel": "Notification: employeeskill list retrieval failed"
+    },
+    "viewFailed": {
+      "code": "ESE406",
+      "message": "employeeskill details fetch failed.",
+      "ariaLabel": "Notification: employeeskill details fetch failed"
+    },
+    "deleteFailed": {
+      "code": "ESE407",
+      "message": "employeeskill deletion failed.",
+      "ariaLabel": "Notification: employeeskill deletion failed"
+    },
+    "oktaUsersFailed": {
+      "code": "ESE408",
+      "message": "okta users retrieve failed.",
+      "ariaLabel": "Notification: okta users retrieve failed"
+    }
+  }
+}

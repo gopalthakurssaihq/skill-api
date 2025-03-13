@@ -1,0 +1,61 @@
+{
+  "success": {
+    "createSuccess": {
+      "code": "EXS001",
+      "message": "expertise created successfully.",
+      "ariaLabel": "Notification: expertise created successfully"
+    },
+    "updateSuccess": {
+      "code": "EXS002",
+      "message": "expertise updated successfully.",
+      "ariaLabel": "Notification: expertise updated successfully"
+    },
+    "listSuccess": {
+      "code": "EXS003",
+      "message": "expertise list retrieved successfully.",
+      "ariaLabel": "Notification: expertise list retrieved successfully"
+    },
+    "viewSuccess": {
+      "code": "EXS004",
+      "message": "expertise details fetched successfully.",
+      "ariaLabel": "Notification: expertise details fetched successfully"
+    },
+    "deleteSuccess": {
+      "code": "EXS005",
+      "message": "expertise deleted successfully.",
+      "ariaLabel": "Notification: expertise deleted successfully"
+    }
+  },
+  "error": {
+    "recordNotFound": {
+      "code": "EXE404",
+      "message": "expertise not found.",
+      "ariaLabel": "Error: expertise not found"
+    },
+    "createFailed": {
+      "code": "EXE403",
+      "message": "expertise not created.",
+      "ariaLabel": "Notification: expertise not created"
+    },
+    "updateFailed": {
+      "code": "EXE402",
+      "message": "expertise update failed.",
+      "ariaLabel": "Notification: expertise update failed"
+    },
+    "listFailed": {
+      "code": "EXE405",
+      "message": "expertise list retrieval failed.",
+      "ariaLabel": "Notification: expertise list retrieval failed"
+    },
+    "viewFailed": {
+      "code": "EXE406",
+      "message": "expertise details fetch failed.",
+      "ariaLabel": "Notification: expertise details fetch failed"
+    },
+    "deleteFailed": {
+      "code": "EXE407",
+      "message": "expertise deletion failed.",
+      "ariaLabel": "Notification: expertise deletion failed"
+    }
+  }
+}

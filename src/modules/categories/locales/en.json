@@ -1,0 +1,61 @@
+{
+  "success": {
+    "createSuccess": {
+      "code": "SKS001",
+      "message": "skill created successfully.",
+      "ariaLabel": "Notification: skill created successfully"
+    },
+    "updateSuccess": {
+      "code": "SKS002",
+      "message": "skill updated successfully.",
+      "ariaLabel": "Notification: skill updated successfully"
+    },
+    "listSuccess": {
+      "code": "SKS003",
+      "message": "skill list retrieved successfully.",
+      "ariaLabel": "Notification: skill list retrieved successfully"
+    },
+    "viewSuccess": {
+      "code": "SKS004",
+      "message": "skill details fetched successfully.",
+      "ariaLabel": "Notification: skill details fetched successfully"
+    },
+    "deleteSuccess": {
+      "code": "SKS005",
+      "message": "skill deleted successfully.",
+      "ariaLabel": "Notification: skill deleted successfully"
+    }
+  },
+  "error": {
+    "recordNotFound": {
+      "code": "SKE404",
+      "message": "skill not found.",
+      "ariaLabel": "Error: skill not found"
+    },
+    "createFailed": {
+      "code": "SKE403",
+      "message": "skill not created.",
+      "ariaLabel": "Notification: skill not created"
+    },
+    "updateFailed": {
+      "code": "SKE402",
+      "message": "skill update failed.",
+      "ariaLabel": "Notification: skill update failed"
+    },
+    "listFailed": {
+      "code": "SKE405",
+      "message": "skill list retrieval failed.",
+      "ariaLabel": "Notification: skill list retrieval failed"
+    },
+    "viewFailed": {
+      "code": "SKE406",
+      "message": "skill details fetch failed.",
+      "ariaLabel": "Notification: skill details fetch failed"
+    },
+    "deleteFailed": {
+      "code": "SKE407",
+      "message": "skill deletion failed.",
+      "ariaLabel": "Notification: skill deletion failed"
+    }
+  }
+}

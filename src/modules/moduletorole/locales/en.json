@@ -1,0 +1,61 @@
+{
+  "success": {
+    "createSuccess": {
+      "code": "MRS001",
+      "message": "module to role created successfully.",
+      "ariaLabel": "Notification: module to role created successfully"
+    },
+    "updateSuccess": {
+      "code": "MRS002",
+      "message": "module to role updated successfully.",
+      "ariaLabel": "Notification: module to role updated successfully"
+    },
+    "listSuccess": {
+      "code": "MRS003",
+      "message": "module to role list retrieved successfully.",
+      "ariaLabel": "Notification: module to role list retrieved successfully"
+    },
+    "viewSuccess": {
+      "code": "MRS004",
+      "message": "module to role details fetched successfully.",
+      "ariaLabel": "Notification: module to role details fetched successfully"
+    },
+    "deleteSuccess": {
+      "code": "MRS005",
+      "message": "module to role deleted successfully.",
+      "ariaLabel": "Notification: module to role deleted successfully"
+    }
+  },
+  "error": {
+    "recordNotFound": {
+      "code": "MRE404",
+      "message": "module to role not found.",
+      "ariaLabel": "Error: module to role not found"
+    },
+    "createFailed": {
+      "code": "MRE403",
+      "message": "module to role not created.",
+      "ariaLabel": "Notification: module to role not created"
+    },
+    "updateFailed": {
+      "code": "MRE402",
+      "message": "module to role update failed.",
+      "ariaLabel": "Notification: module to role update failed"
+    },
+    "listFailed": {
+      "code": "MRE405",
+      "message": "module to role list retrieval failed.",
+      "ariaLabel": "Notification: module to role list retrieval failed"
+    },
+    "viewFailed": {
+      "code": "MRE406",
+      "message": "module to role details fetch failed.",
+      "ariaLabel": "Notification: module to role details fetch failed"
+    },
+    "deleteFailed": {
+      "code": "MRE407",
+      "message": "module to role deletion failed.",
+      "ariaLabel": "Notification: module to role deletion failed"
+    }
+  }
+}

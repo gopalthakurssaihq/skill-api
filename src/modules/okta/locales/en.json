@@ -1,0 +1,16 @@
+{
+  "success": {
+    "oktaUsersSuccess": {
+      "code": "ESS006",
+      "message": "okta users retrieve successfully.",
+      "ariaLabel": "Notification: okta users retrieve successfully"
+    }
+  },
+  "error": {
+    "oktaUsersFailed": {
+      "code": "ESE408",
+      "message": "okta users retrieve failed.",
+      "ariaLabel": "Notification: okta users retrieve failed"
+    }
+  }
+}
