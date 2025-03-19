@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const JwtService = require('../../utils/jwt');
 const { getMessage } = require('../../utils/constant');
 const User = require('../../db/User');
+const Mtr = require('../../db/ModuleToRole');
 
 const AuthService = {
   /**
@@ -25,6 +26,11 @@ const AuthService = {
           errorStack: null
         };
       }
+      const mtr  = await Mtr.findOne({ roleSlug: user.role.toLowerCase() });
+
+      if (!mtr) {
+        console.error('user has no module assigned');
+      }
 
       // Prepare JWT payload
       const payload = {
@@ -34,9 +40,10 @@ const AuthService = {
         firstName: user.firstName,
         lastName: user.lastName,
         employeeNumber: user.employeeNumber,
-        displayName: user.displayName
+        displayName: user.displayName,
+        allowedModules: mtr?.modules || [],
       };
-
+      console.log("test --- ", payload)
       const accessToken = await JwtService.generateJWT({ payload });
       const refreshToken = await JwtService.generateRefreshToken({ payload });
 
@@ -180,6 +187,13 @@ const AuthService = {
         };
       }
 
+      const mtr  = await Mtr.findOne({ roleSlug: user.role.toLowerCase() });
+
+      if (!mtr) {
+        console.error('user has no module assigned');
+      }
+
+
       // Prepare JWT payload
       const payload = {
         id: user._id,
@@ -188,8 +202,11 @@ const AuthService = {
         firstName: user.firstName,
         lastName: user.lastName,
         employeeNumber: user.employeeNumber,
-        displayName: user.displayName
+        displayName: user.displayName,
+        allowedModules: mtr?.modules || [],
       };
+
+      console.log("test ---1 ", payload)
 
       const accessToken = await JwtService.generateJWT({ payload });
       const refreshToken = await JwtService.generateRefreshToken({ payload });

@@ -24,7 +24,7 @@
     "SECURE_KEY": "",
     "SECURE_IV": "",
     "JWT_ACCESS_TOKEN_SECRET": "",
-    "JWT_EXPIRE_IN": "2h",
+    "JWT_EXPIRE_IN": 7200,
     "SUPPRESS_NO_CONFIG_WARNING": true
   }
   

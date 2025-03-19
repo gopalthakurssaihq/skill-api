@@ -8,6 +8,11 @@ const EmployeeSkillController = {
     return helper.generateResponse(response);
   },
 
+  getbyname: async (httpRequest) => {
+    const response = await EmployeeSkillService.getbyname(httpRequest.body);
+    return helper.generateResponse(response);
+  },
+
   addorupdate: async (httpRequest) => {
     const response = await EmployeeSkillService.addorupdate(httpRequest.body);
     return helper.generateResponse(response);

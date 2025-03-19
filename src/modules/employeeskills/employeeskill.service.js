@@ -29,49 +29,48 @@ const EmployeeSkillService = {
 
   // Add or update an EmployeeSkill record
   addorupdate: async (data) => {
-  try {
-    const existingRecord = await EmployeeSkill.findOne({ email: data.email });
+    try {
+      const existingRecord = await EmployeeSkill.findOne({ email: data.email });
 
-    if (existingRecord) {
-      // Update the existing record
-      const updatedRecord = await EmployeeSkill.findOneAndUpdate(
-        { email: data.email }, 
-        { $set: data }, 
-        { new: true } // Return the updated document
-      );
+      if (existingRecord) {
+        // Update the existing record
+        const updatedRecord = await EmployeeSkill.findOneAndUpdate(
+          { email: data.email },
+          { $set: data },
+          { new: true } // Return the updated document
+        );
 
+        return {
+          data: updatedRecord,
+          statusCode: 200,
+          isError: false,
+          message: getMessage('en', 'success', 'updateSuccess', 'employeeskills'),
+          errorStack: null
+        };
+      } else {
+        // Create a new record
+        const newRecord = new EmployeeSkill(data);
+        await newRecord.save();
+
+        return {
+          data: newRecord,
+          statusCode: 201,
+          isError: false,
+          message: getMessage('en', 'success', 'createSuccess', 'employeeskills'),
+          errorStack: null
+        };
+      }
+    } catch (error) {
+      console.error('EmployeeSkill operation failed:', error);
       return {
-        data: updatedRecord,
-        statusCode: 200,
-        isError: false,
-        message: getMessage('en', 'success', 'updateSuccess', 'employeeskills'),
-        errorStack: null
-      };
-    } else {
-      // Create a new record
-      const newRecord = new EmployeeSkill(data);
-      await newRecord.save();
-
-      return {
-        data: newRecord,
-        statusCode: 201,
-        isError: false,
-        message: getMessage('en', 'success', 'createSuccess', 'employeeskills'),
-        errorStack: null
+        data: null,
+        statusCode: 500,
+        isError: true,
+        message: getMessage('en', 'error', 'operationFailed', 'employeeskills'),
+        errorStack: error
       };
     }
-  } catch (error) {
-    console.error('EmployeeSkill operation failed:', error);
-    return {
-      data: null,
-      statusCode: 500,
-      isError: true,
-      message: getMessage('en', 'error', 'operationFailed', 'employeeskills'),
-      errorStack: error
-    };
-  }
-},
-
+  },
 
   // List employeeskills with pagination & search
   list: async (params) => {
@@ -219,6 +218,38 @@ const EmployeeSkillService = {
         statusCode: 500,
         isError: true,
         message: getMessage('en', 'error', 'deleteFailed', 'employeeskills'),
+        errorStack: error
+      };
+    }
+  },
+
+  getbyname: async (data) => {
+    try {
+      const record = await EmployeeSkill.find({ email: data.email });
+      if (!record) {
+        return {
+          data: null,
+          statusCode: 404,
+          isError: true,
+          message: getMessage('en', 'error', 'recordNotFound', 'employeeskills'),
+          errorStack: null
+        };
+      }
+
+      return {
+        data: record,
+        statusCode: 200,
+        isError: false,
+        message: getMessage('en', 'success', 'viewSuccess', 'employeeskills'),
+        errorStack: null
+      };
+    } catch (error) {
+      console.error('Fetching employeeskill failed:', error);
+      return {
+        data: null,
+        statusCode: 500,
+        isError: true,
+        message: getMessage('en', 'error', 'viewFailed', 'employeeskills'),
         errorStack: error
       };
     }

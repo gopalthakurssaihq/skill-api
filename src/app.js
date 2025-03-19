@@ -32,6 +32,7 @@ const { requestLogger } = require('./support/logger');
 require('express-async-errors');
 const { errorHandler, badJsonHandler, notFoundHandler } = require('./middlewares');
 const User = require('./db/User');
+const Mtr = require('./db/ModuleToRole');
 
 // Body Parser
 app.use(bodyParser.json({ limit: '100mb' }));
@@ -154,6 +155,12 @@ app.post('/login/callback', passport.authenticate('saml', { session: false }), a
     resUser = await resUser.save();
   }
 
+  const mtr  = await Mtr.findOne({ roleSlug: resUser.role.toLowerCase() });
+
+  if (!mtr) {
+    console.error('user has no module assigned');
+  }
+
   // Prepare JWT payload
   const payload = {
     id: resUser._id,
@@ -162,7 +169,8 @@ app.post('/login/callback', passport.authenticate('saml', { session: false }), a
     firstName: resUser.firstName,
     lastName: resUser.lastName,
     employeeNumber: resUser.employeeNumber,
-    displayName: resUser.displayName
+    displayName: resUser.displayName,
+    allowedModules: mtr?.modules || [],
   };
   const accessToken = await JwtService.generateJWT({ payload });
   res.redirect(`http://localhost:3002/login?token=${accessToken}`);

@@ -19,6 +19,11 @@ module.exports = ({
     makeValidatorCallback(EmployeeSkillValidator.add),
     makeExpressCallback(EmployeeSkillController.addorupdate)
   );
+  router.post(
+    '/recordbyemail',
+    sessionChecker,
+    makeExpressCallback(EmployeeSkillController.getbyname),
+  );
   router.get('/', sessionChecker, makeExpressCallback(EmployeeSkillController.list));
   router.get('/:id', sessionChecker, makeExpressCallback(EmployeeSkillController.view));
 
